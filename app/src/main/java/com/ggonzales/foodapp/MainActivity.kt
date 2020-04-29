@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         catalogueGridView.setOnItemLongClickListener { _, view, position, id ->
             Toast.makeText(this, "Long click", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, CElementView::class.java)
-            intent.putExtra("name", "${listOfElements[position].name!!}")
+            intent.putExtra("name", listOfElements[position].name!!)
             intent.putExtra("desc", listOfElements[position].desc!!)
             intent.putExtra("image", listOfElements[position].image!!)
             intent.putExtra("hasLongClicked", "Yes")
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    inner class CatalogueAdapter: BaseAdapter{
+    class CatalogueAdapter: BaseAdapter{
         var elementsList = ArrayList<CatalogueElement>()
         var context : Context? = null
 
